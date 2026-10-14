@@ -1,4 +1,6 @@
-﻿namespace Topics_1_7_summative
+﻿using System.Net.NetworkInformation;
+
+namespace Topics_1_7_summative
 {
     internal class Program
     {
@@ -72,6 +74,11 @@
                         Console.WriteLine("It's a tie");
                     }
                 }
+                //while (RPS.ToLower() != "rock" || RPS.ToLower() != "paper" || RPS.ToLower() != "scissors")
+                //{
+                    //Console.WriteLine("type 'rock' 'paper' or 'scissors'");
+                    //Console.ReadLine();
+                //}
             }
             Console.WriteLine("You won " + points + "/3 rounds.");
             }
