@@ -5,59 +5,76 @@
         static void Main(string[] args)
         {
             Random generator = new Random();
-            int randNum;
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.Clear();
+            int randNum, rounds, points;
             string RPS;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Rock Paper Scissors");
-            RPS = Console.ReadLine();
-            randNum = generator.Next(2);
-            if (randNum == 0)
+            Console.WriteLine("(three rounds)");
+            rounds = 0;
+            points = 0;
+            while (rounds != 3)
             {
-                Console.WriteLine("Rock");
-                if (RPS.ToLower() == "rock")
+                RPS = Console.ReadLine();
+                randNum = generator.Next(2);
+                if (randNum == 0)
                 {
-                    Console.WriteLine("It's a tie");
+                    Console.WriteLine("Rock");
+                    rounds = rounds + 1;
+                    if (RPS.ToLower() == "rock")
+                    {
+                        Console.WriteLine("It's a tie");
+                    }
+                    if (RPS.ToLower() == "paper")
+                    {
+                        Console.WriteLine("You lose!");
+                    }
+                    if (RPS.ToLower() == "scissors")
+                    {
+                        Console.WriteLine("You win!");
+                        points = points + 1;
+                    }
                 }
-                if (RPS.ToLower() == "paper")
+                if (randNum == 1)
                 {
-                    Console.WriteLine("You lose!");
+                    Console.WriteLine("Paper");
+                    rounds = rounds + 1;
+                    if (RPS.ToLower() == "rock")
+                    {
+                        Console.WriteLine("You lose!");
+                    }
+                    if (RPS.ToLower() == "paper")
+                    {
+                        Console.WriteLine("It's a tie!");
+                    }
+                    if (RPS.ToLower() == "scissors")
+                    {
+                        Console.WriteLine("You win!");
+                        points = points + 1;
+                    }
                 }
-                if (RPS.ToLower() == "scissors")
+                if (randNum == 2)
                 {
-                    Console.WriteLine("You win!");
+                    Console.WriteLine("Scissors");
+                    rounds = rounds + 1;
+                    if (RPS.ToLower() == "rock")
+                    {
+                        Console.WriteLine("You win!");
+                        points = points + 1;
+                    }
+                    if (RPS.ToLower() == "paper")
+                    {
+                        Console.WriteLine("You lose!");
+                    }
+                    if (RPS.ToLower() == "scissors")
+                    {
+                        Console.WriteLine("It's a tie");
+                    }
                 }
             }
-            if (randNum == 1)
-            {
-                Console.WriteLine("Paper");
-                if (RPS.ToLower() == "rock")
-                {
-                    Console.WriteLine("You lose!");
-                }
-                if (RPS.ToLower() == "paper")
-                {
-                    Console.WriteLine("It's a tie!");
-                }
-                if (RPS.ToLower() == "scissors")
-                {
-                    Console.WriteLine("You win!");
-                }
-            }
-            if (randNum == 2)
-            {
-                Console.WriteLine("Scissors");
-                if (RPS.ToLower() == "rock")
-                {
-                    Console.WriteLine("You win!");
-                }
-                if (RPS.ToLower() == "paper")
-                {
-                    Console.WriteLine("You lose!");
-                }
-                if (RPS.ToLower() == "scissors")
-                {
-                    Console.WriteLine("It's a tie");
-                }
+            Console.WriteLine("You won " + points + "/3 rounds.");
             }
         }
     }
-}
+
