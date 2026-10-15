@@ -10,8 +10,9 @@ namespace Topics_1_7_summative
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.Clear();
             int randNum, rounds, points;
-            string RPS, bankAcc;
+            string RPS = "", bankAcc;
             double bet;
+            bool done;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
@@ -19,7 +20,20 @@ namespace Topics_1_7_summative
             points = 0;
             while (rounds != 3)
             {
-                RPS = Console.ReadLine();
+                done = false;
+                while (!done)
+                {
+                    Console.WriteLine("type 'rock' 'paper' or 'scissors'");
+                    RPS = Console.ReadLine();
+                    if (RPS.ToLower() == "rock" || RPS.ToLower() == "paper" || RPS.ToLower() == "scissors")
+                    {
+                        done = true;
+                    }
+                    else
+                        Console.WriteLine("Invalid choice");
+                }
+
+                
                 randNum = generator.Next(3);
                 if (randNum == 0)
                 {
@@ -32,12 +46,12 @@ namespace Topics_1_7_summative
                     }
                     if (RPS.ToLower() == "paper")
                     {
-                        Console.WriteLine("You lose!");
+                        Console.WriteLine("You win!");
+                        points = points + 1;
                     }
                     if (RPS.ToLower() == "scissors")
                     {
-                        Console.WriteLine("You win!");
-                        points = points + 1;
+                        Console.WriteLine("You lose!");
                     }
                     randNum = generator.Next(2);
                 }
@@ -81,11 +95,7 @@ namespace Topics_1_7_summative
                     }
                     randNum = generator.Next(2);
                 }
-                //while (RPS.ToLower() != "rock" || RPS.ToLower() != "paper" || RPS.ToLower() != "scissors")
-                //{
-                    //Console.WriteLine("type 'rock' 'paper' or 'scissors'");
-                    //Console.ReadLine();
-                //}
+                
             }
             Console.WriteLine("You won " + points + "/3 rounds.");
             Console.WriteLine();
