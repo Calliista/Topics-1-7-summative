@@ -32,13 +32,19 @@ namespace Topics_1_7_summative
                     else
                         Console.WriteLine("Invalid choice");
                 }
-
                 
                 randNum = generator.Next(3);
                 if (randNum == 0)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Rock");
+                    Console.WriteLine("      _______");
+                    Console.WriteLine("-- - '   ____");
+                    Console.WriteLine("      (_____)");
+                    Console.WriteLine("      (_____)");
+                    Console.WriteLine("      (____)");
+                    Console.WriteLine("-- -.__(___)");
+
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
