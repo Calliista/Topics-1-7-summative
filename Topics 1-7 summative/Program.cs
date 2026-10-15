@@ -16,6 +16,8 @@ namespace Topics_1_7_summative
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
+            //Console.WriteLine("Enter your bet:");
+            //bet = Console.Read();
             rounds = 0;
             points = 0;
             while (rounds != 3)
@@ -32,7 +34,7 @@ namespace Topics_1_7_summative
                     else
                         Console.WriteLine("Invalid choice");
                 }
-                
+
                 randNum = generator.Next(3);
                 if (randNum == 0)
                 {
@@ -127,12 +129,17 @@ namespace Topics_1_7_summative
                     }
                     randNum = generator.Next(2);
                 }
-                
+
             }
             Console.WriteLine("You won " + points + "/3 rounds.");
-            Console.WriteLine();
-            Console.WriteLine();
+            if (points <= 2)
+            {
+                Console.WriteLine("You lose!");
             }
-        }
+            if (points >= 2)
+            {
+                Console.WriteLine("You Win!");
+            }
     }
+}
 
