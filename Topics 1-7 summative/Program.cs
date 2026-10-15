@@ -37,39 +37,47 @@ namespace Topics_1_7_summative
                 randNum = generator.Next(3);
                 if (randNum == 0)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Rock");
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("It's a tie. Try again.");
                         rounds = rounds - 1;
                     }
                     if (RPS.ToLower() == "paper")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You win!");
                         points = points + 1;
                     }
                     if (RPS.ToLower() == "scissors")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You lose!");
                     }
                     randNum = generator.Next(2);
                 }
                 if (randNum == 1)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Paper");
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You lose!");
                     }
                     if (RPS.ToLower() == "paper")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("It's a tie. Try again.");
                         rounds = rounds - 1;
                     }
                     if (RPS.ToLower() == "scissors")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You win!");
                         points = points + 1;
                     }
@@ -77,19 +85,23 @@ namespace Topics_1_7_summative
                 }
                 if (randNum == 2)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Scissors");
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You win!");
                         points = points + 1;
                     }
                     if (RPS.ToLower() == "paper")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You lose!");
                     }
                     if (RPS.ToLower() == "scissors")
                     {
+                        Console.WriteLine();
                         Console.WriteLine("It's a tie. Try again.");
                         rounds = rounds - 1;
                     }
