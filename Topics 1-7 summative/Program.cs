@@ -69,6 +69,13 @@ namespace Topics_1_7_summative
                 {
                     Console.WriteLine();
                     Console.WriteLine("Paper");
+                    Console.WriteLine("      _______");
+                    Console.WriteLine("-- - '   ____)_____");
+                    Console.WriteLine("          ________)");
+                    Console.WriteLine("          _________)");
+                    Console.WriteLine("         _________)");
+                    Console.WriteLine("---.____________)");
+
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
@@ -93,6 +100,13 @@ namespace Topics_1_7_summative
                 {
                     Console.WriteLine();
                     Console.WriteLine("Scissors");
+                    Console.WriteLine("      _______");
+                    Console.WriteLine("-- - '   ____)____");
+                    Console.WriteLine("          _______)");
+                    Console.WriteLine("       ___________)");
+                    Console.WriteLine("      (____)");
+                    Console.WriteLine("-- -.__(___)");
+
                     rounds = rounds + 1;
                     if (RPS.ToLower() == "rock")
                     {
