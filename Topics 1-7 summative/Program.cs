@@ -10,14 +10,17 @@ namespace Topics_1_7_summative
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.Clear();
             int randNum, rounds, points;
-            string RPS = "", bankAcc;
-            double bet;
+            string RPS = "";
+            double bet, bankAcc;
             bool done;
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow; 
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
-            //Console.WriteLine("Enter your bet:");
-            //bet = Console.Read();
+            Console.WriteLine("You have $50.00 in your bank account");
+            bet = 0.0;
+            Console.WriteLine("Enter the ammount you're betting: ");
+            bet = Convert.ToInt32(Console.ReadLine());
+            bankAcc = 50.00;
             rounds = 0;
             points = 0;
             while (rounds != 3)
@@ -32,7 +35,9 @@ namespace Topics_1_7_summative
                         done = true;
                     }
                     else
+                    {
                         Console.WriteLine("Invalid choice");
+                    }
                 }
 
                 randNum = generator.Next(3);
@@ -136,12 +141,18 @@ namespace Topics_1_7_summative
             if (points <= 1)
             {
                 Console.WriteLine("You lose!");
+                Console.WriteLine("You lost " + bet);
+                bankAcc = bankAcc - bet;
+                Console.WriteLine("You now have " + bankAcc + "in your bank account");
             }
             if (points >= 2)
             {
                 Console.WriteLine("You Win!");
+                Console.WriteLine("You won " + bet);
+                bankAcc = bankAcc + bet;
+                Console.WriteLine("You now have " + bankAcc + "in your bank account");
             }
-
+            //Double.TryParse(Console.ReadLine();
         }
     }
 }
