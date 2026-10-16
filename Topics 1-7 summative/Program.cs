@@ -131,8 +131,9 @@ namespace Topics_1_7_summative
                 }
 
             }
+            Console.WriteLine();
             Console.WriteLine("You won " + points + "/3 rounds.");
-            if (points <= 2)
+            if (points <= 1)
             {
                 Console.WriteLine("You lose!");
             }
@@ -140,6 +141,8 @@ namespace Topics_1_7_summative
             {
                 Console.WriteLine("You Win!");
             }
+
+        }
     }
 }
 
