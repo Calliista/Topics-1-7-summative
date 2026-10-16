@@ -13,7 +13,7 @@ namespace Topics_1_7_summative
             string RPS = "", yn;
             double bet, bankAcc;
             bool done, retry;
-            Console.ForegroundColor = ConsoleColor.Yellow; 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
             Console.WriteLine("You have $50.00 in your bank account");
@@ -149,18 +149,34 @@ namespace Topics_1_7_summative
                 Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
                 Console.WriteLine();
                 Console.WriteLine("Would you like to try again? (yes/no)");
-                Console.ReadLine();
+                yn = Console.ReadLine();
+                if (yn.ToLower() == "yes")
+                {
+                    Console.WriteLine();
+                }
+                if (yn.ToLower() == "no")
+                {
+                    Console.WriteLine();
+                }
+                if (points >= 2)
+                {
+                    Console.WriteLine("You Win!");
+                    Console.WriteLine("You won " + bet.ToString("C"));
+                    bankAcc = bankAcc + bet;
+                    Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
+                    Console.WriteLine("Would you like to try again? (yes/no)");
+                    yn = Console.ReadLine();
+                    if (yn.ToLower() == "yes")
+                    {
+                        Console.WriteLine();
+                    }
+                    if (yn.ToLower() == "no")
+                    {
+                        Console.WriteLine();
+                    }
+
+                }
             }
-            if (points >= 2)
-            {
-                Console.WriteLine("You Win!");
-                Console.WriteLine("You won " + bet.ToString("C"));
-                bankAcc = bankAcc + bet;
-                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
-                Console.WriteLine("Would you like to try again? (yes/no)");
-                Console.ReadLine();
-            }
-            //Double.TryParse(Console.ReadLine();
         }
     }
 }
