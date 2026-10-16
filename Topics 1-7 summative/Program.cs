@@ -141,16 +141,16 @@ namespace Topics_1_7_summative
             if (points <= 1)
             {
                 Console.WriteLine("You lose!");
-                Console.WriteLine("You lost " + bet);
+                Console.WriteLine("You lost " + bet.ToString("C"));
                 bankAcc = bankAcc - bet;
-                Console.WriteLine("You now have " + bankAcc + "in your bank account");
+                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
             }
             if (points >= 2)
             {
                 Console.WriteLine("You Win!");
-                Console.WriteLine("You won " + bet);
+                Console.WriteLine("You won " + bet.ToString("C"));
                 bankAcc = bankAcc + bet;
-                Console.WriteLine("You now have " + bankAcc + "in your bank account");
+                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
             }
             //Double.TryParse(Console.ReadLine();
         }
