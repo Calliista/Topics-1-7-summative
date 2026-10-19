@@ -150,6 +150,7 @@ namespace Topics_1_7_summative
                     if (bankAcc <= 0.0)
                     {
                         Console.WriteLine("you're out of money, you can't bet anymore.");
+                        retry = true;
                     }
                     if (bankAcc > 0.0)
                     {
