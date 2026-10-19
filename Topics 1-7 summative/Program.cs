@@ -7,13 +7,13 @@ namespace Topics_1_7_summative
         static void Main(string[] args)
         {
             Random generator = new Random();
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.Clear();
             int randNum, rounds, points;
             string RPS = "", yn;
             double bet, bankAcc;
             bool done, retry;
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
             Console.WriteLine("You have $50.00 in your bank account");
