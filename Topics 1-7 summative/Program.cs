@@ -23,160 +23,177 @@ namespace Topics_1_7_summative
             bankAcc = 50.00;
             rounds = 0;
             points = 0;
-            //retry = false;
-            //while (!retry) 
-            //{  
-            while (rounds != 3)
+            retry = false;
+            while (!retry)
             {
-                done = false;
-                while (!done)
+                while (rounds != 3)
                 {
-                    Console.WriteLine("type 'rock' 'paper' or 'scissors'");
-                    RPS = Console.ReadLine();
-                    if (RPS.ToLower() == "rock" || RPS.ToLower() == "paper" || RPS.ToLower() == "scissors")
+                    done = false;
+                    while (!done)
                     {
-                        done = true;
+                        Console.WriteLine("type 'rock' 'paper' or 'scissors'");
+                        RPS = Console.ReadLine();
+                        if (RPS.ToLower() == "rock" || RPS.ToLower() == "paper" || RPS.ToLower() == "scissors")
+                        {
+                            done = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid choice");
+                        }
                     }
-                    else
+
+                    randNum = generator.Next(3);
+                    if (randNum == 0)
                     {
-                        Console.WriteLine("Invalid choice");
+                        Console.WriteLine();
+                        Console.WriteLine("Rock");
+                        Console.WriteLine("      _______");
+                        Console.WriteLine("-- - '   ____");
+                        Console.WriteLine("      (_____)");
+                        Console.WriteLine("      (_____)");
+                        Console.WriteLine("      (____)");
+                        Console.WriteLine("-- -.__(___)");
+
+                        rounds = rounds + 1;
+                        if (RPS.ToLower() == "rock")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("It's a tie. Try again.");
+                            rounds = rounds - 1;
+                        }
+                        if (RPS.ToLower() == "paper")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You win!");
+                            points = points + 1;
+                        }
+                        if (RPS.ToLower() == "scissors")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You lose!");
+                        }
+                        randNum = generator.Next(2);
                     }
+                    if (randNum == 1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Paper");
+                        Console.WriteLine("      _______");
+                        Console.WriteLine("-- - '   ____)_____");
+                        Console.WriteLine("          ________)");
+                        Console.WriteLine("          _________)");
+                        Console.WriteLine("         _________)");
+                        Console.WriteLine("---.____________)");
+
+                        rounds = rounds + 1;
+                        if (RPS.ToLower() == "rock")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You lose!");
+                        }
+                        if (RPS.ToLower() == "paper")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("It's a tie. Try again.");
+                            rounds = rounds - 1;
+                        }
+                        if (RPS.ToLower() == "scissors")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You win!");
+                            points = points + 1;
+                        }
+                        randNum = generator.Next(2);
+                    }
+                    if (randNum == 2)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Scissors");
+                        Console.WriteLine("      _______");
+                        Console.WriteLine("-- - '   ____)____");
+                        Console.WriteLine("          _______)");
+                        Console.WriteLine("       ___________)");
+                        Console.WriteLine("      (____)");
+                        Console.WriteLine("-- -.__(___)");
+
+                        rounds = rounds + 1;
+                        if (RPS.ToLower() == "rock")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You win!");
+                            points = points + 1;
+                        }
+                        if (RPS.ToLower() == "paper")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You lose!");
+                        }
+                        if (RPS.ToLower() == "scissors")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("It's a tie. Try again.");
+                            rounds = rounds - 1;
+                        }
+                        randNum = generator.Next(2);
+                    }
+
                 }
-
-                randNum = generator.Next(3);
-                if (randNum == 0)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Rock");
-                    Console.WriteLine("      _______");
-                    Console.WriteLine("-- - '   ____");
-                    Console.WriteLine("      (_____)");
-                    Console.WriteLine("      (_____)");
-                    Console.WriteLine("      (____)");
-                    Console.WriteLine("-- -.__(___)");
-
-                    rounds = rounds + 1;
-                    if (RPS.ToLower() == "rock")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("It's a tie. Try again.");
-                        rounds = rounds - 1;
-                    }
-                    if (RPS.ToLower() == "paper")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You win!");
-                        points = points + 1;
-                    }
-                    if (RPS.ToLower() == "scissors")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You lose!");
-                    }
-                    randNum = generator.Next(2);
-                }
-                if (randNum == 1)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Paper");
-                    Console.WriteLine("      _______");
-                    Console.WriteLine("-- - '   ____)_____");
-                    Console.WriteLine("          ________)");
-                    Console.WriteLine("          _________)");
-                    Console.WriteLine("         _________)");
-                    Console.WriteLine("---.____________)");
-
-                    rounds = rounds + 1;
-                    if (RPS.ToLower() == "rock")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You lose!");
-                    }
-                    if (RPS.ToLower() == "paper")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("It's a tie. Try again.");
-                        rounds = rounds - 1;
-                    }
-                    if (RPS.ToLower() == "scissors")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You win!");
-                        points = points + 1;
-                    }
-                    randNum = generator.Next(2);
-                }
-                if (randNum == 2)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Scissors");
-                    Console.WriteLine("      _______");
-                    Console.WriteLine("-- - '   ____)____");
-                    Console.WriteLine("          _______)");
-                    Console.WriteLine("       ___________)");
-                    Console.WriteLine("      (____)");
-                    Console.WriteLine("-- -.__(___)");
-
-                    rounds = rounds + 1;
-                    if (RPS.ToLower() == "rock")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You win!");
-                        points = points + 1;
-                    }
-                    if (RPS.ToLower() == "paper")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("You lose!");
-                    }
-                    if (RPS.ToLower() == "scissors")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("It's a tie. Try again.");
-                        rounds = rounds - 1;
-                    }
-                    randNum = generator.Next(2);
-                }
-
-            }
-            Console.WriteLine();
-            Console.WriteLine("You won " + points + "/3 rounds.");
-            if (points <= 1)
-            {
-                Console.WriteLine("You lose!");
-                Console.WriteLine("You lost " + bet.ToString("C"));
-                bankAcc = bankAcc - bet;
-                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
                 Console.WriteLine();
-                Console.WriteLine("Would you like to try again? (yes/no)");
-                yn = Console.ReadLine();
-                if (yn.ToLower() == "yes")
+                Console.WriteLine("You won " + points + "/3 rounds.");
+                if (points <= 1)
                 {
-                    Console.WriteLine();
-                }
-                if (yn.ToLower() == "no")
-                {
-                    Console.WriteLine();
+                    Console.WriteLine("You lose!");
+                    Console.WriteLine("You lost " + bet.ToString("C"));
+                    bankAcc = bankAcc - bet;
+                    Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
+                    if (bankAcc <= 0.0)
+                    {
+                        Console.WriteLine("you're out of money, you can't bet anymore.");
+                    }
+                    if (bankAcc > 0.0)
+                    {
+                        Console.WriteLine("Would you like to try again? (yes/no)");
+                        yn = Console.ReadLine();
+                        if (yn.ToLower() == "yes")
+                        {
+                            Console.WriteLine();
+                        }
+                        if (yn.ToLower() == "no")
+                        {
+                            Console.WriteLine();
+                            retry = true;
+                        }
+                    }
                 }
                 if (points >= 2)
+                { 
+                Console.WriteLine("You Win!");
+                Console.WriteLine("You won " + bet.ToString("C"));
+                bankAcc = bankAcc + bet;
+                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
+                if (bankAcc <= 0.0)
                 {
-                    Console.WriteLine("You Win!");
-                    Console.WriteLine("You won " + bet.ToString("C"));
-                    bankAcc = bankAcc + bet;
-                    Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
-                    Console.WriteLine("Would you like to try again? (yes/no)");
-                    yn = Console.ReadLine();
-                    if (yn.ToLower() == "yes")
+                    Console.WriteLine("you're out of money, you can't bet anymore.");
+                }
+                    if (bankAcc > 0.0)
                     {
-                        Console.WriteLine();
-                    }
-                    if (yn.ToLower() == "no")
-                    {
-                        Console.WriteLine();
+                        Console.WriteLine("Would you like to try again? (yes/no)");
+                        yn = Console.ReadLine();
+                        if (yn.ToLower() == "yes")
+                        {
+                            Console.WriteLine();
+                        }
+                        if (yn.ToLower() == "no")
+                        {
+                            Console.WriteLine();
+                            retry = true;
+                        }
                     }
 
                 }
             }
+
         }
     }
 }
