@@ -183,7 +183,7 @@ namespace Topics_1_7_summative
                         yn = Console.ReadLine();
                         if (yn.ToLower() == "yes")
                         {
-                            Console.WriteLine();
+                            Console.ReadLine();
                         }
                         if (yn.ToLower() == "no")
                         {
