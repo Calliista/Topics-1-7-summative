@@ -9,25 +9,27 @@ namespace Topics_1_7_summative
             Random generator = new Random();
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.Clear();
-            int randNum, rounds, points;
+            int randNum, rounds, points, rock = 0, paper = 1, scissors = 2;
             string RPS = "", yn;
             double bet, bankAcc;
             bool done, retry;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("There's three rounds. if you tie, you try again.");
-            Console.WriteLine("You have $50.00 in your bank account");
-            bet = 0.0;
-            Console.WriteLine("Enter the ammount you're betting: ");
-            bet = Convert.ToInt32(Console.ReadLine());
+            
             bankAcc = 50.00;
             rounds = 0;
             points = 0;
             retry = false;
             while (!retry)
             {
+                Console.WriteLine("You have " + bankAcc.ToString("C") + " in your bank account");
+                bet = 0.0;
+                Console.WriteLine("Enter the ammount you're betting: ");
+                bet = Convert.ToInt32(Console.ReadLine());
                 while (rounds != 3)
                 {
+
                     done = false;
                     while (!done)
                     {
@@ -44,7 +46,7 @@ namespace Topics_1_7_summative
                     }
 
                     randNum = generator.Next(3);
-                    if (randNum == 0)
+                    if (randNum == rock)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Rock");
@@ -75,7 +77,7 @@ namespace Topics_1_7_summative
                         }
                         randNum = generator.Next(2);
                     }
-                    if (randNum == 1)
+                    if (randNum == paper)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Paper");
@@ -106,7 +108,7 @@ namespace Topics_1_7_summative
                         }
                         randNum = generator.Next(2);
                     }
-                    if (randNum == 2)
+                    if (randNum == scissors)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Scissors");
@@ -138,7 +140,8 @@ namespace Topics_1_7_summative
                         randNum = generator.Next(2);
                     }
 
-                }
+                }// ends best of 3
+
                 Console.WriteLine();
                 Console.WriteLine("You won " + points + "/3 rounds.");
                 if (points <= 1)
@@ -147,52 +150,39 @@ namespace Topics_1_7_summative
                     Console.WriteLine("You lost " + bet.ToString("C"));
                     bankAcc = bankAcc - bet;
                     Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
-                    if (bankAcc <= 0.0)
-                    {
-                        Console.WriteLine("you're out of money, you can't bet anymore.");
-                        retry = true;
-                    }
-                    if (bankAcc > 0.0)
-                    {
-                        Console.WriteLine("Would you like to try again? (yes/no)");
-                        yn = Console.ReadLine();
-                        if (yn.ToLower() == "yes")
-                        {
-                            Console.WriteLine();
-                        }
-                        if (yn.ToLower() == "no")
-                        {
-                            Console.WriteLine();
-                            retry = true;
-                        }
-                    }
+                    
                 }
-                if (points >= 2)
-                { 
-                Console.WriteLine("You Win!");
-                Console.WriteLine("You won " + bet.ToString("C"));
-                bankAcc = bankAcc + bet;
-                Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
+                else if (points >= 2)
+                {
+                    Console.WriteLine("You Win!");
+                    Console.WriteLine("You won " + bet.ToString("C"));
+                    bankAcc = bankAcc + bet;
+                    Console.WriteLine("You now have " + bankAcc.ToString("C") + " in your bank account");
+                }
                 if (bankAcc <= 0.0)
                 {
                     Console.WriteLine("you're out of money, you can't bet anymore.");
+                    retry = true;
                 }
-                    if (bankAcc > 0.0)
+                if (bankAcc > 0.0)
+                {
+                    Console.WriteLine("Would you like to try again? (yes/no)");
+                    yn = Console.ReadLine();
+                    if (yn.ToLower() == "yes")
                     {
-                        Console.WriteLine("Would you like to try again? (yes/no)");
-                        yn = Console.ReadLine();
-                        if (yn.ToLower() == "yes")
-                        {
-                            Console.ReadLine();
-                        }
-                        if (yn.ToLower() == "no")
-                        {
-                            Console.WriteLine();
-                            retry = true;
-                        }
+                        Console.WriteLine("hit enter to continue");
+                        Console.ReadLine();
+                    }
+                    if (yn.ToLower() == "no")
+                    {
+                        Console.WriteLine();
+                        retry = true;
                     }
 
+
                 }
+
+                
             }
 
         }
