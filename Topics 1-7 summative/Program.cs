@@ -171,6 +171,8 @@ namespace Topics_1_7_summative
                     if (yn.ToLower() == "yes")
                     {
                         Console.WriteLine("hit enter to continue");
+                        rounds = 0;
+                        points = 0;
                         Console.ReadLine();
                     }
                     if (yn.ToLower() == "no")
